@@ -141,7 +141,7 @@ app.get('/recruiter/opening/new',(req,res)=>{
 })
 
 // Apply for an opening. (Candidate)
-app.get('/opening/:id/apply/:cid',(req,res)=>{
+app.get('/candidate/opening/:id/apply/:cid',(req,res)=>{
 
     MongoClient.connect(uri, { useNewUrlParser: true }, (err, client)=>{
         if (err) throw err;
@@ -215,13 +215,16 @@ app.get('/recruiter/applications/accept/:aid',(req,res)=>{
 })
 
 // Reject Applicant to a opening (Recruiter)
-app.get('/recruiter/applications/reject/:aids',(req,res)=>{
+app.get('/recruiter/applications/reject/:aid',(req,res)=>{
 
     MongoClient.connect(uri, { useNewUrlParser: true }, (err, client)=>{
         if (err) throw err;
     
         const applicationId=ObjectID(req.params.aid)
        application.reject(applicationId,client);
+
+       res.send("Application Rejected")
+       client.close();
 
     })
 })
@@ -245,7 +248,11 @@ app.get('/candidate/myapplications/:aid/delete',(req,res)=>{
         if (err) throw err;
     
        const applicantId=ObjectID(req.params.aid)
-       application.reject(aid,client)
+       application.reject(applicantId,client)
+
+       res.send("Application Deleted!")
+
+       client.close()
 
     })
 })
