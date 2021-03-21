@@ -239,7 +239,7 @@ app.get('/candidate/myapplications/:cid',(req,res)=>{
 })
 
 // Delete an Applications.
-app.get('/candidate/myapplications/:aid',(req,res)=>{
+app.get('/candidate/myapplications/:aid/delete',(req,res)=>{
     
     MongoClient.connect(uri, { useNewUrlParser: true }, (err, client)=>{
         if (err) throw err;
