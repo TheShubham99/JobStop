@@ -45,5 +45,32 @@ function loginCandidate(username,password,client,res){
     
 }
 
+function viewCandidates(client,res){
+
+    client.db('JobStop')
+    .collection('Candidate')
+    .find({})
+    .toArray((err,result)=>{
+        res.send({"All Candidates":result})        
+    })
+
+
+
+}
+
+function getCandidateDetails(id,client,callback){
+
+    client.db('JobStop')
+    .collection('Candidate')
+    .find({_id:id})
+    .toArray()
+    .then((result)=>{
+        return callback(result[0]);
+    })
+
+}
+
 module.exports.login=loginCandidate;
+module.exports.getCandidateDetails=getCandidateDetails;
+module.exports.viewCandidates=viewCandidates;
 module.exports.create=createCandidate;
