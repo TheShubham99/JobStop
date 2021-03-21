@@ -1,3 +1,5 @@
+// Creates a new Candidate entry with given parameters
+
 function createCandidate(name,username,qualification,age,phone,email,password,client,res){
 
     let candidate=

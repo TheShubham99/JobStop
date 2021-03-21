@@ -83,7 +83,7 @@ function getOpeningDetails(id,client,callback){
 
 }
 
-
+// Checks vacancy status and Accepts/Rejects the application.
  function acceptApplicant(id,cid,client,res){
     
     candidate.getCandidateDetails(cid,client,(candidate)=>{
@@ -116,40 +116,10 @@ function getOpeningDetails(id,client,callback){
                 res.send("Vacency Full")
             }
         })
-        
-    
-
 
 })
 }
  
-
-/* function acceptApplicant(id,cid,client,res){
-
-   // console.log("ID"+id)
-    
-    let candidateObject={}
-
-    candidate.getCandidateDetails(cid,client,(result)=>{
-        candidateObject=result;
-        console.log(result)
-    
-    client.db('JobStop')
-    .collection('Openings')
-    .updateOne({_id:id},{
-         $set:{candidates: result }}
-      )
-    
-    .then(()=>{
-        closeOpening(id,client,res)
-        client.close();
-    })
-
-})
-} */
-
-
-
 module.exports.viewClosedOpenings=viewClosedOpenings;
 module.exports.getOpeningDetails=getOpeningDetails;
 module.exports.viewOpenings=viewOpenings;

@@ -70,6 +70,7 @@ app.get('/candidate/new',(req,res)=>
     })
 })
 
+// Recruiter Sign Up
 app.get('/recruiter/new',(req,res)=>
 {
     MongoClient.connect(uri, { useNewUrlParser: true }, (err, client)=>{

@@ -1,7 +1,7 @@
 const candidate=require('./candidate')
 const opening=require('./openings')
 
-
+// Creates a new application in collection 'Openings'
 function createApplication(openingId,applicantId,client,res)
 {
     
@@ -44,6 +44,7 @@ function createApplication(openingId,applicantId,client,res)
         })
 }
 
+// Deletes the application from collection 'Openings' with given 'applicationId'
 function deleteApplication(applicationId,client)
 {
  
@@ -55,6 +56,9 @@ function deleteApplication(applicationId,client)
             })
 
 }
+
+
+// Accepts the application, updates the openings and deletes the application. 
 
 function acceptApplication(applicationId,client,res)
 {
@@ -71,6 +75,8 @@ function acceptApplication(applicationId,client,res)
         
     })
 }
+
+// Shows all applications from a particular candidate
 
 function showMyApplications(cid,client,res){
 
