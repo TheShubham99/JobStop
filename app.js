@@ -238,6 +238,18 @@ app.get('/candidate/myapplications/:cid',(req,res)=>{
     })
 })
 
+// Delete an Applications.
+app.get('/candidate/myapplications/:aid',(req,res)=>{
+    
+    MongoClient.connect(uri, { useNewUrlParser: true }, (err, client)=>{
+        if (err) throw err;
+    
+       const applicantId=ObjectID(req.params.aid)
+       application.reject(aid,client)
+
+    })
+})
+
 app.listen(3000,()=>{
     console.log("Server started")
 })
