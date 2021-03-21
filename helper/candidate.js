@@ -1,8 +1,7 @@
-function createCandidate(id,name,username,qualification,age,phone,email,password,client,res){
+function createCandidate(name,username,qualification,age,phone,email,password,client,res){
 
     let candidate=
     {
-        _id:id,
         name:name,
         username:username,
         qualification:qualification,
