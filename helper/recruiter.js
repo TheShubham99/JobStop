@@ -1,8 +1,8 @@
-function createRecruiter(id,name,username,org,phone,email,password,client,res){
+function createRecruiter(name,username,org,phone,email,password,client,res){
 
     let recruiter=
     {
-        _id:id,
+
         name:name,
         username:username,
         org:org,
