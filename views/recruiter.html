@@ -1,0 +1,58 @@
+<html>
+
+<title>Recruiter Signup | Login</title>
+
+<script>
+    function login(){
+        const username=document.getElementById("username").value;
+        const password=document.getElementById("password").value;
+
+      
+        document.location+="/login?username="+username+"&password="+password;
+        
+    }
+
+    function signup(){
+        const username=document.getElementById("susername").value;
+        const phone=document.getElementById("sphone").value;
+        const name=document.getElementById("sname").value;
+        const org=document.getElementById("sorg").value;
+        const password=document.getElementById("spassword").value;
+        const email=document.getElementById("semail").value;
+        
+        document.location+="/new?username="+username+"&phone="+phone+"&name="+name+"&org="+org+"&email="+email+"&password="+password;
+        
+    }
+</script>
+
+<center>
+<div>
+    <h1>Recruiter Signup</h1>
+         
+      <p><input id="sname" type="text" placeholder="Enter Name"></input></p>
+      <p><input id="susername" type="text" placeholder="Enter Username"></input></p>
+      <p><input id="sphone" type="text" placeholder="Enter Phone"></input></p>
+      <p><input id="sorg" type="text" placeholder="Enter Organization"></input></p>
+      <p><input id="spassword" type="password" placeholder="Enter New Password"></input></p>
+      <p><input id="semail" type="text" placeholder="Enter Your Email"></input></p>
+      
+       
+    
+    
+    <button onclick="signup()">Signup</button>
+</div>
+
+<div>
+<h1>Recruiter Login</h1>
+     
+  <p><input id="username" type="text" placeholder="Enter Username"></input></p>
+  <p><input id="password" type="password" placeholder="Enter Password"></input></p>
+  
+   
+
+
+<button onclick="login()">Login</button>
+</div>
+</center>
+
+</html>
