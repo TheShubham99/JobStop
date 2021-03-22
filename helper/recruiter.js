@@ -44,5 +44,17 @@ function loginRecruiter(username,password,client,res){
     
 }
 
+function showAllRecruiters(client,res){
+
+    client.db('JobStop')
+    .collection('Recruiter')
+    .find({})
+    .toArray((err,result)=>{
+        res.send({"All Recruiters: ":result})
+    })
+    
+}
+
 module.exports.login=loginRecruiter;
 module.exports.create=createRecruiter;
+module.exports.showAllRecruiters=showAllRecruiters

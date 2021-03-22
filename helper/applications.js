@@ -89,7 +89,21 @@ function showMyApplications(cid,client,res){
     })
 }
 
+// Shows all applications.
+
+function showAllApplications(client,res){
+
+    client.db('JobStop')
+    .collection('Applications')
+    .find({})
+    .toArray((err,result)=>{
+        console.log(result)
+        res.send({"My Applications":result})
+    })
+}
+
 module.exports.create=createApplication
 module.exports.accept=acceptApplication
 module.exports.reject=deleteApplication
 module.exports.myapplications=showMyApplications
+module.exports.showAllApplications=showAllApplications

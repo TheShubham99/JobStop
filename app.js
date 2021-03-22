@@ -258,6 +258,46 @@ app.get('/candidate/myapplications/:aid/delete',(req,res)=>{
     })
 })
 
+// View Database Collections
+
+// Collection - Openings
+app.get('/Database/Openings',(req,res)=>{
+    MongoClient.connect(uri, { useNewUrlParser: true }, (err, client)=>{
+        if (err) throw err;
+
+        opening.viewOpenings(client,res)
+    })
+})
+
+// Collection - Candidates
+app.get('/Database/Candidates',(req,res)=>{
+    MongoClient.connect(uri, { useNewUrlParser: true }, (err, client)=>{
+        if (err) throw err;
+
+        candidate.viewCandidates(client,res)
+    })
+})
+
+// Collection - Recruiters
+app.get('/Database/Recruiters',(req,res)=>{
+    MongoClient.connect(uri, { useNewUrlParser: true }, (err, client)=>{
+        if (err) throw err;
+
+        recruiter.showAllRecruiters(client,res)
+    })
+})
+
+// Collection - Applications
+app.get('/Database/Applications',(req,res)=>{
+    MongoClient.connect(uri, { useNewUrlParser: true }, (err, client)=>{
+        if (err) throw err;
+
+        application.showAllApplications(client,res)
+    })
+})
+
+
+
 app.listen(3000,()=>{
     console.log("Server started")
 })
