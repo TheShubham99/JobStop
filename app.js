@@ -135,8 +135,9 @@ app.get('/recruiter/opening/new',(req,res)=>{
         const title=req.query.title;
         const org=req.query.org;
         const status=req.query.status;
+        const vacancies=req.query.vacancies;
     
-        opening.create(title,org,status,client,res)
+        opening.create(title,org,status,vacancies,client,res)
 
     })
 })
