@@ -7,9 +7,18 @@
 - `npm i`
 - `npm start`
 
-### Prerequistite :
+### How to test :
 
-- `update .env variable **DBconnection**`
+- Clone the project or open inside the gitpod
+- Run `npm i` followed by `npm start`
+- You can find the server running at `localhost:3000`
+- Follow this API Doc to know more about the working of the JobStop API. [Doc Link](https://docs.google.com/document/d/1Mo7gxw05SXSRMzqBFcD6llw4y9yG4qiyuiwBKzUucV0/edit?usp=sharing)
+
+### Stack used :
+
+- Node/Express server
+- Cloud MongoDB server
+- Postman to test the endpoints
 
 > Author: Prathamesh Sahasrabhojane
 
